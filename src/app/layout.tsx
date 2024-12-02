@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import CustomThemeProvider from '@/components/ThemeProvider';
+import CustomThemeProvider from '@/components/CustomThemeProvider';
 
 export const metadata = {
   title: 'Next.js App Router + Material UI',
