@@ -1,3 +1,2 @@
-- document browser screenshots defaults and cookie
-- set current versions
-- update SETUP.md
+- [ ] document browser screenshots defaults and cookie
+- [ ] set current versions
