@@ -17,14 +17,14 @@ export function LightDarkSwitch() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    console.log('LightDarkSwitch.tsx useEffect triggering');
-    const storedTheme = document.cookie
-      .split('; ')
-      .find((row) => row.startsWith('theme='))
-      ?.split('=')[1];
-    console.log('LightDarkSwitch.tsx storedTheme (from cookie):', storedTheme);
-    setMode(storedTheme === 'dark' ? 'dark' : 'light');
-    console.log('LightDarkSwitch.tsx Mode set:', storedTheme);
+    // console.log('LightDarkSwitch.tsx useEffect triggering');
+    // const storedTheme = document.cookie
+    //   .split('; ')
+    //   .find((row) => row.startsWith('theme='))
+    //   ?.split('=')[1];
+    // console.log('LightDarkSwitch.tsx storedTheme (from cookie):', storedTheme);
+    // setMode(storedTheme === 'dark' ? 'dark' : 'light');
+    // console.log('LightDarkSwitch.tsx Mode set:', storedTheme);
     setMounted(true);
   }, []);
 

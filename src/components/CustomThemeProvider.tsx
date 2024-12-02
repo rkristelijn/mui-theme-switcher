@@ -39,8 +39,15 @@ export default function CustomThemeProvider({ children }: Readonly<{ children: R
       .split('; ')
       .find((row) => row.startsWith('theme='))
       ?.split('=')[1];
-    console.log('ThemeProvider.tsx storedTheme (from cookie):', storedTheme);
-    setTheme(storedTheme === 'dark' ? 'dark' : 'light');
+
+    if (storedTheme) {
+      setTheme(storedTheme === 'dark' ? 'dark' : 'light');
+    } else {
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      console.log('CustomThemeProvider.tsx prefersDarkMode:', prefersDarkMode);
+      setTheme(prefersDarkMode ? 'dark' : 'light');
+    }
+
     setMounted(true);
   }, []);
 
