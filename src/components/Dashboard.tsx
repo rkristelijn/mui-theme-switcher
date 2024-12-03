@@ -6,7 +6,7 @@ import { LightDarkSwitch } from './LightDarkSwitch';
 export default function Dashboard() {
   return (
     <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h1" gutterBottom>
         Dashboard
       </Typography>
       <Typography variant="body1" gutterBottom>
@@ -16,6 +16,9 @@ export default function Dashboard() {
       <Button variant="contained" onClick={() => alert('Button clicked!')}>
         Action Button
       </Button>
+      <Typography variant="body1" gutterBottom>
+        Mind, when running on stackblitz, you need to refresh after switching
+      </Typography>
       <LightDarkSwitch />
     </Box>
   );

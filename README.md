@@ -10,19 +10,31 @@ This prototype uses either the MUI light theme or the dark theme, based on the p
 
 ## Debug
 
-You can doublecheck what you prefer here <https://septatrix.github.io/prefers-color-scheme-test/>
+You can doublecheck what you prefer going to this page and see what your browser supports and what your preference is <https://septatrix.github.io/prefers-color-scheme-test/>
 
 ## Architecture
 
 ![Architecture](docs/architecture.png)
 
-The layout.tsx file calls for the CustomThemeProvider that has some logic and wraps the MUI Theme provider.
+### Concern: loading the theme
 
-The page.tsx renders the Dashboard that has the LightDarkSwitch component that redirects to `/api/theme?theme=dark` or `/api/theme?theme=light` to set the cookie and redirects to `/` again.
+The `layout.tsx` file calls for the `CustomThemeProvider.tsx` that has some logic and wraps the `MUIThemeProvider`.
+
+### Concern: application 'business as usual'
+
+The page.tsx renders the Dashboard that has
+
+### Concern: switching the theme.
+
+The `LightDarkSwitch` component checks from the theme what is active so that it can render the right icon. When swithing it redirects to `/api/theme?theme=dark` or `/api/theme?theme=light` to set the cookie and redirects to `/` again to clean up the url.
+
+### Functionality
 
 Initially, when there is no cookie, it renders dark or light theme from [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) aka if you prefer light or dark mode.
 
 ## Demo
+
+<https://stackblitz.com/~/github.com/rkristelijn/mui-theme-switcher>
 
 Chrome seems to be unable to switch the default without a reboot of the system on mac. Hence a demo for Chrome and Firefox.
 
