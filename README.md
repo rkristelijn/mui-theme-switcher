@@ -28,6 +28,8 @@ The page.tsx renders the Dashboard that has
 
 The `LightDarkSwitch` component checks from the theme what is active so that it can render the right icon. When swithing it redirects to `/api/theme?theme=dark` or `/api/theme?theme=light` to set the cookie and redirects to `/` again to clean up the url.
 
+The cookie can be set on the server or from the client with setting in the `LightDarkSwitch.tsx` file; `const runOnServer = false;`
+
 ### Functionality
 
 Initially, when there is no cookie, it renders dark or light theme from [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) aka if you prefer light or dark mode.

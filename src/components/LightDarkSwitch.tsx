@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 
 export function LightDarkSwitch() {
+  const runOnServer = false;
   const theme = useTheme();
   const [mode, setMode] = useState<'light' | 'dark'>(theme.palette.mode);
   const [mounted, setMounted] = useState(false);
@@ -21,11 +22,17 @@ export function LightDarkSwitch() {
   }
 
   const toggleColorMode = () => {
-    console.log('LightDarkSwitch.tsx toggleColorMode triggering');
     const newMode = mode === 'dark' ? 'light' : 'dark';
-    console.log('LightDarkSwitch.tsx newMode, setting', newMode);
-    setMode(newMode);
-    window.location.href = `/api/theme?theme=${newMode}`;
+    if (runOnServer) {
+      console.log('LightDarkSwitch.tsx (using server) newMode, setting', newMode);
+      setMode(newMode);
+      window.location.href = `/api/theme?theme=${newMode}`;
+    } else {
+      document.cookie = `theme=${newMode}; path=/`;
+      setMode(newMode);
+      // Instead of redirecting, we can reload the page to apply the new theme
+      window.location.reload();
+    }
   };
 
   return (
