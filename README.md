@@ -36,7 +36,7 @@ Initially, when there is no cookie, it renders dark or light theme from [prefers
 
 ## Demo
 
-<https://stackblitz.com/~/github.com/rkristelijn/mui-theme-switcher>
+<https://stackblitz.com/~/github.com/rkristelijn/mui-theme-switcher> << doesn't work with the cookie >>, so clone locally.
 
 Chrome seems to be unable to switch the default without a reboot of the system on mac. Hence a demo for Chrome and Firefox.
 
