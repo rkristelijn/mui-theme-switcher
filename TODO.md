@@ -1,2 +1,0 @@
-- [ ] document browser screenshots defaults and cookie
-- [ ] set current versions
