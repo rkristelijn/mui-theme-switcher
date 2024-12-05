@@ -1,5 +1,10 @@
-import Dashboard from '../components/Dashboard';
+import { Dashboard } from '@/features/dashboard/Dashboard';
 
-export default function Home() {
-  return <Dashboard />;
-}
+export const metadata = {
+  title: 'Dashboard - MUI theme switcher demo',
+  description: 'Server-side Theme Switching with MUI',
+};
+
+const Home = () => <Dashboard />;
+
+export default Home;

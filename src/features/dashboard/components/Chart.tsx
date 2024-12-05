@@ -21,7 +21,7 @@ const data = [
   { date: '2023-01-01', price: 18000 },
 ];
 
-export default function Chart() {
+export const Chart = () => {
   const theme = useTheme();
 
   return (
@@ -43,4 +43,4 @@ export default function Chart() {
       </Box>
     </Paper>
   );
-}
+};

@@ -15,7 +15,7 @@ const rows = [
   createData('Macros the Black', 'Sorcerer', 'A Darkness at Sethanon'),
 ];
 
-export default function DataTable() {
+export const DataTable = () => {
   const theme = useTheme();
 
   return (
@@ -27,10 +27,10 @@ export default function DataTable() {
         <TableContainer>
           <Table>
             <TableHead>
-              <TableRow sx={{ backgroundColor: theme.palette.primary.main }}>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Name</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Role</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Book</TableCell>
+              <TableRow sx={{ backgroundColor: theme.palette.secondary.main }}>
+                <TableCell sx={{ color: theme.palette.secondary.contrastText }}>Name</TableCell>
+                <TableCell sx={{ color: theme.palette.secondary.contrastText }}>Role</TableCell>
+                <TableCell sx={{ color: theme.palette.secondary.contrastText }}>Book</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -47,4 +47,4 @@ export default function DataTable() {
       </Box>
     </Paper>
   );
-}
+};
