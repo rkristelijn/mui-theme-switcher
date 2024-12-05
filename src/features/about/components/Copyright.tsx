@@ -1,8 +1,7 @@
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import MuiLink from '@mui/material/Link';
 
-export default function Copyright() {
+export const Copyright = () => {
   return (
     <Typography
       variant="body2"
@@ -18,4 +17,4 @@ export default function Copyright() {
       {new Date().getFullYear()}.
     </Typography>
   );
-}
+};

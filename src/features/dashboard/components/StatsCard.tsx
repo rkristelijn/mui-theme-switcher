@@ -7,7 +7,7 @@ interface StatsCardProps {
   value: string;
 }
 
-export default function StatsCard({ title, value }: Readonly<StatsCardProps>) {
+export const StatsCard = ({ title, value }: Readonly<StatsCardProps>) => {
   return (
     <Card>
       <CardContent>
@@ -18,4 +18,4 @@ export default function StatsCard({ title, value }: Readonly<StatsCardProps>) {
       </CardContent>
     </Card>
   );
-}
+};

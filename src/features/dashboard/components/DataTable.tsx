@@ -15,7 +15,7 @@ const rows = [
   createData('Macros the Black', 'Sorcerer', 'A Darkness at Sethanon'),
 ];
 
-export default function DataTable() {
+export const DataTable = () => {
   const theme = useTheme();
 
   return (
@@ -47,4 +47,4 @@ export default function DataTable() {
       </Box>
     </Paper>
   );
-}
+};

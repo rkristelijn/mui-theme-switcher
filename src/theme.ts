@@ -10,10 +10,14 @@ const roboto = Roboto({
 
 const theme = createTheme({
   cssVariables: {
-    colorSchemeSelector: 'class'
+    colorSchemeSelector: 'class',
   },
   palette: {
     mode: 'light',
+    background: {
+      default: '#f5f5f5',
+      paper: '#fff',
+    },
   },
   colorSchemes: {
     dark: true,
@@ -24,15 +28,15 @@ const theme = createTheme({
   components: {
     MuiAlert: {
       styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.background.default,
+        }),
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
         root: {
-          variants: [
-            {
-              props: { severity: 'info' },
-              style: {
-                backgroundColor: '#60a5fa',
-              },
-            },
-          ],
+          textTransform: 'none',
         },
       },
     },
