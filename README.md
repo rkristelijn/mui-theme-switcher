@@ -113,6 +113,10 @@ mv material-ui-nextjs-ts mui-theme-switcher
 cd mui-theme-switcher
 ```
 
+### Official docs of MUI
+
+<https://mui.com/material-ui/customization/css-theme-variables/configuration/>
+
 ### Add some content with one route
 
 I always like to think of every page as a features, this keeps things simple and forces split of concerns in the design.
@@ -139,3 +143,42 @@ This is to emphasise that no special things are needed rather than to use the fo
 1. All changes to the look and feel (or UI experience) will be done in the theme to ensure consistency
 2. Only very local overrides you can do with `sx` property overrides
 3. Keep in mind both the dark and light theme if you are going to use overrides when editing colors
+
+### Tailor the theme
+
+1. You need to add colorSchemes: `{ dark: true }` at the minimum to support dark theme.
+2. optionally you can override MUI components, when using colors always pick from the theme.pallete like this: `({ theme }) => ({ backgroundColor: theme.palette.background.default, })`
+
+### Connect theme and ThemeProvider and prevent SSR flickering
+
+In `app/layout.tsx`, add:
+
+```ts
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
+
+export default function RootLayout(props) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        {/* must come before the <main> element */}
+        <InitColorSchemeScript attribute="class" />
+        <main>{children}</main>
+      </body>
+    </html>
+  );
+}
+```
+
+and to `src/theme.ts` set
+
+```ts
+const theme = createTheme({
+  cssVariables: {
+    colorSchemeSelector: 'class',
+  },
+});
+```
+
+### Transition effect
+
+Optionally you can add a transition effect, however that is not a MUI feature and you have to override every component that you want to apply it to

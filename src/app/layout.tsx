@@ -14,11 +14,17 @@ const RootLayout = (props: Readonly<{ children: React.ReactNode }>) => {
     // suppressHydrationWarning is used to prevent mismatched class names during hydration and recommended to be added to the root element
     // @see https://mui.com/material-ui/customization/css-theme-variables/configuration/#next-js-app-router
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body
+        style={{
+          // This is used to prevent a flash of the light theme on page load
+          transition: 'background-color 2s, color 2s',
+        }}
+      >
         {/* Injects a script that sets the initial color scheme based on the user's system preference or a saved preference */}
         <InitColorSchemeScript attribute="class" defaultMode="light" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>
+          {/* you can add disableTransitionOnChange to disable the transition */}
+          <ThemeProvider theme={theme} disableTransitionOnChange={false}>
             <CssBaseline />
             <main>{props.children}</main>
           </ThemeProvider>
