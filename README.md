@@ -1,6 +1,6 @@
 # mui-theme-switcher
 
-This prototype uses either the MUI light theme or the dark theme, based on the preference of the user (via browser or operating system) and uses native MUI functionality only. The user is able to switch between dark and light, it persists accros page changes.
+This prototype uses either the MUI light theme or the dark theme, based on the preference of the user (via browser or operating system) and uses native MUI functionality only. The user is able to switch between dark and light, it persists accross page changes.
 
 ## Demo
 
